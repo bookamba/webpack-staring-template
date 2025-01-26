@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <!-- use CSS Anchor Positioning Polyfill - https://github.com/oddbird/css-anchor-positioning -->
+    <!--
+    <script type="module">
+      if (!('anchorName' in document.documentElement.style)) {
+        import('https://unpkg.com/@oddbird/css-anchor-positioning')
+      }
+    </script>
+    -->
+  </head>
+
+  <body>
+    <%= require('./html_components/_header.ejs')({}) %>
+
+    <main id="home-page" class="home-page">
+      <div class="container px-0">
+        <h1>Home page</h1>
+
+        <% for (let i = 0; i < 4; i++) { %>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est repudiandae suscipit velit voluptatum perspiciatis odio, rerum voluptate dicta voluptatem, rem, fugit pariatur explicabo vero
+          illum repellat aut itaque similique error.
+        </p>
+        <% } %>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <%= require('./html_components/_footer.ejs')({}) %>
+
+    <!-- modals -->
+    <%= require('./html_components/_modals.ejs')({}) %>
+  </body>
+</html>

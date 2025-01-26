@@ -1,0 +1,9 @@
+@use '../abstracts/variables' as *;
+// global CSS variables
+
+:root {
+  interpolate-size: allow-keywords;
+
+  --clr-main: #3d3d3d;
+  --duration: 0.2s;
+}

@@ -1,0 +1,75 @@
+@use '../abstracts' as *;
+@use '../base/root' as *;
+
+/* custom details styles */
+.details-wraper {
+  details::details-content {
+    display: none !important;
+  }
+
+  > details > summary {
+    outline: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > .title {
+      font-size: rem(20);
+      font-weight: 700;
+    }
+
+    &::marker {
+      display: none;
+    }
+
+    &::after {
+      flex-shrink: 0;
+      transition: background-image var(--duration);
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.99951 -0.00195312C7.14969 -0.00195312 6.46077 0.686966 6.46077 1.53679V6.46077H1.53679C0.686966 6.46077 -0.00195312 7.14969 -0.00195312 7.99951C-0.00195312 8.84934 0.686966 9.53825 1.53679 9.53825H6.46077V14.4622C6.46077 15.3121 7.14969 16.001 7.99951 16.001C8.84934 16.001 9.53826 15.3121 9.53826 14.4622V9.53825H14.4622C15.3121 9.53825 16.001 8.84934 16.001 7.99951C16.001 7.14969 15.3121 6.46077 14.4622 6.46077H9.53826V1.53679C9.53826 0.686966 8.84934 -0.00195312 7.99951 -0.00195312Z' fill='%23313134'/%3E%3C/svg%3E%0A");
+      content: '';
+      width: rem(16);
+      height: rem(16);
+      background-size: 100% 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  > .details-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--duration);
+
+    .details-content-inner {
+      overflow: hidden;
+    }
+  }
+
+  > details[open] {
+    > summary {
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='4' viewBox='0 0 16 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.4549 0.176758C15.3036 0.176758 15.9917 0.864815 15.9917 1.71358C15.9917 2.56234 15.3036 3.2504 14.4549 3.2504L1.54561 3.25039C0.696846 3.25039 0.00878903 2.56234 0.00878906 1.71358C0.0087891 0.864815 0.696846 0.176758 1.54561 0.176758L14.4549 0.176758Z' fill='%23313134'/%3E%3C/svg%3E%0A");
+      }
+    }
+
+    & + .details-content {
+      grid-template-rows: 1fr;
+    }
+  }
+}
+
+/* usage */
+/*
+<div class="details-wraper"> <!-- [open] -->
+  <details>
+    <summary>
+      <div class="title">Title</div>
+    </summary>
+  </details>
+  <div class="details-content">
+    <div class="details-content-inner">
+      ...
+    </div>
+  </div>
+</div>
+*/

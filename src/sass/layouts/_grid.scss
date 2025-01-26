@@ -1,0 +1,35 @@
+@use '../abstracts' as *;
+@use 'sass:map';
+
+// Grid systems and layouts.
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+body > main {
+  flex-grow: 1;
+}
+
+$max-sm: map.get($grid-breakpoints, sm) - 1;
+$max-md: map.get($grid-breakpoints, md) - 1;
+$max-lg: map.get($grid-breakpoints, lg) - 1;
+@media (min-width: #{$max-sm}) and (max-width: #{$max-md - 1px}) {
+  // styles for screens from max-sm to max-md-1px
+}
+
+@media (min-width: #{$max-md}) and (max-width: #{$max-lg - 1px}) {
+  // styles for screens from max-md to max-lg-1px
+}
+
+@media (max-width: #{$max-lg - 1px}) {
+  // styles for screens up to max-lg-1px
+}
+
+@media (max-width: #{$max-md - 1px}) {
+  // styles for screens up to max-md-1px
+}
+
+@media (max-width: #{$max-sm - 1px}) {
+  // styles for screens up to max-sm-1px
+}

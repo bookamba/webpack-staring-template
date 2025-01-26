@@ -1,0 +1,40 @@
+@use 'abstracts' as *;
+@use 'frameworks/bootstrap' as *;
+@use 'modules/swiper' as *;
+@use 'base' as *;
+@use 'components' as *;
+@use 'layouts' as *;
+@use 'pages' as *;
+@use 'utilities' as *;
+
+/*
+@layer abstracts, framework, base, components, layouts, pages, utilities;
+
+@layer abstracts {
+  @import 'abstracts';
+}
+
+@layer framework {
+  @import 'frameworks/bootstrap';
+}
+
+@layer base {
+  @import 'base';
+}
+
+@layer components {
+  @import 'components';
+}
+
+@layer layouts {
+  @import 'layouts';
+}
+
+@layer pages {
+  @import 'pages';
+}
+
+@layer utilities {
+  @import 'utilities';
+}
+*/

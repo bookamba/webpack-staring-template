@@ -1,0 +1,49 @@
+// Custom SCSS functions.
+
+@use 'sass:math';
+
+@function round($number, $decimals: 0) {
+  $n: 1;
+  @if $decimals > 0 {
+    @for $i from 1 through $decimals {
+      $n: $n * 10;
+    }
+  }
+  @return math.div(math.round($number * $n), $n);
+}
+
+@function px-to-rem($px) {
+  $rems: math.div($px, 16px) * 1rem;
+  @return $rems;
+}
+
+$default-min-bp: 320px;
+$default-max-bp: 960px;
+// Function to get dynamic padding based on screen width.
+@function responsive-size($min-size, $max-size, $min-breakpoint: $default-min-bp, $max-breakpoint: $default-max-bp, $unit: vw) {
+  $slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);
+  $slope-to-unit: round($slope * 100, 2);
+  $intercept-rem: round(px-to-rem($min-size - $slope * $min-breakpoint), 2);
+  $min-size-rem: round(px-to-rem($min-size), 2);
+  $max-size-rem: round(px-to-rem($max-size), 2);
+  @return clamp(#{$min-size-rem}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$max-size-rem});
+}
+
+// Examples of using the function
+/*
+.container {
+  padding: responsive-size(600px, 1200px, 6, 15);
+}
+*/
+
+// Function for converting pixels to rem
+@function rem($pixels, $base-font-size: 16) {
+  @return #{$pixels / $base-font-size}rem;
+}
+
+// Usage of the rem function
+/*
+body {
+  font-size: rem(18);
+}
+*/

@@ -1,0 +1,22 @@
+{
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "tabWidth": 2,
+  "printWidth": 200,
+  "semi": false,
+  "overrides": [
+    {
+      "files": "*.ejs",
+      "options": {
+        "parser": "html",
+        "htmlWhitespaceSensitivity": "ignore"
+      }
+    },
+    {
+      "files": "*.scss",
+      "options": {
+        "parser": "scss"
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+@use '../abstracts/functions' as *;
+@use '../base/root' as *;
+
+// Import Swiper's basic styles.
+@use 'swiper/css';
+@use 'swiper/css/navigation';
+@use 'swiper/css/pagination';

@@ -1,0 +1,37 @@
+/* https://www.cssportal.com/css-scrollbar-generator/ */
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+/** {
+  scrollbar-width: thin;
+  scrollbar-color: #A3A3A5 #FCFCFF;
+}*/
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 7px;
+  width: 7px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #fcfcff;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #e7e7ea;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #fcfcff;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #a3a3a5;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #959596;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #959596;
+}
