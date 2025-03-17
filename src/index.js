@@ -1,5 +1,6 @@
 // import styles
 import '@/sass/style.scss'
+import '@/images/sprite.svg'
 
 // Loading Bootstrap
 function loadBootstrap() {
